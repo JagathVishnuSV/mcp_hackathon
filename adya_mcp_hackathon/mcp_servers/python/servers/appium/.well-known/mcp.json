@@ -1,0 +1,19 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Appium MCP Integration",
+  "name_for_model": "appium_tool",
+  "description_for_human": "Automate Android apps using Appium via MCP",
+  "description_for_model": "Launch and control Android apps using Appium. Use this to test UI or perform automated tasks.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "http://localhost:5000/openapi.json"
+  }
+}
+## 📽️ Demo Video
+
+[![Watch the demo](media/demo_thumb.jpg)](https://drive.google.com/file/d/VIDEO_ID/view?usp=sharing)
+
+> Click the image to watch the demo video.

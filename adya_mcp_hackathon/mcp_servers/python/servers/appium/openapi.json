@@ -1,0 +1,45 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Appium MCP API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/execute": {
+      "post": {
+        "summary": "Execute Appium actions",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "action": { "type": "string" },
+                  "app_package": { "type": "string" },
+                  "app_activity": { "type": "string" }
+                },
+                "required": ["action"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Action completed"
+          }
+        }
+      }
+    },
+    "/status": {
+      "get": {
+        "summary": "Check server status",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}
