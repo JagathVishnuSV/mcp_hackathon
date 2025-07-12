@@ -88,6 +88,68 @@ Below is a list of MCP tools provided by this project. Each tool enables specifi
 - **get_all_pages**: Retrieves data for all pages in the document, optionally including all shapes.
 - **export_page_as_image**: Exports a page as an image file (PNG, JPEG, or WebP) for external use.
 
+# frame0-mcp-server – MCP Tool for Cursor
 
+This tool allows you to simulate an MCP (Model Control Protocol) server locally using `frame0-mcp-server`. It's useful for testing tool schema integration in [Cursor](https://cursor.sh) without deploying your own backend.
+
+## 🔧 Tool Info
+
+- **Tool Name**: `frame0-mcp-server`
+- **Hosted At**: [glama.ai/mcp/servers/@niklauslee/frame0-mcp-server](https://glama.ai/mcp/servers/@niklauslee/frame0-mcp-server)
+- **Command**:
+  ```bash
+  npx -y frame0-mcp-server
+🎯 Purpose
+This tool helps developers test MCP tools inside Cursor through prompt-based interactions. It acts as a mock server that accepts inputs, returns outputs, and helps you debug your toolchain.
+
+🚀 How to Add This Tool in Cursor
+
+Step 1: Open or Create cursor.json
+In your project root, open cursor.json. If it doesn't exist, create one.
+
+Step 2: Add the Tool Entry
+Paste the following inside the tools array:
+
+{
+  "name": "frame0-mcp-server",
+  "command": "npx",
+  "args": ["-y", "frame0-mcp-server"]
+}
+Full example:
+
+
+{
+  "tools": [
+    {
+      "name": "frame0-mcp-server",
+      "command": "npx",
+      "args": ["-y", "frame0-mcp-server"]
+    }
+  ]
+}
+
+Step 3: Start the Tool in Cursor
+Press Cmd/Ctrl + P to open the Command Palette.
+
+Type: Run Tool: frame0-mcp-server
+
+Select and run it. The mock server will start in the terminal pane.
+
+💬 Testing With Prompts
+Once the server is running, go to the Cursor chat panel and try:
+
+
+Call the tool "frame0-mcp-server" with:
+{
+  "operation": "test_connection",
+  "payload": {}
+}
+You can also test your own tool schema by changing the operation and payload structure.
+
+📹 Tool Demo Video
+To visually understand the process, watch the walkthrough video:
+
+▶️ Click to Watch
+https://drive.google.com/file/d/1jIOZvp3RmpsQ4r2aK10U56zRjLLyD9m9/view?usp=drive_link 
 
 For more details, refer to the README or contact the project maintainer. 
